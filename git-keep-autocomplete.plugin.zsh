@@ -1,5 +1,5 @@
 function list_branches () {
-    compls=$(git branch | grep '^\s*.....$')
+    compls=$(git branch | grep -P "^\s*\w{5}(_\w{1,})?$")
 
     completions=(${=compls})
     compadd -- $completions
